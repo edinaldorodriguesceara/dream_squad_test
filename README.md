@@ -9,7 +9,10 @@ cd dream_squad_test
   ./devops/compose/config.sh
   ./devops/compose/build.sh
   ./devops/compose/up.sh
-  ./devops/compose/exec.sh
+  ./devops/compose/exec.sh mysql bash
+    mysql --version
+    exit
+  ./devops/compose/exec.sh app bash
     ./devops/linux/network.bash
     ./devops/linux/usage.sh
 
@@ -18,14 +21,17 @@ cd dream_squad_test
     ./devops/nginx/start.sh
     ./devops/nginx/status.sh
 
-    curl -i http://localhost:8080
-    # browser: http://localhost:8080
-
     curl -i http://localhost:80
     # browser: http://localhost:80
 
+    curl -i http://localhost:8080
+    # browser: http://localhost:8080
+
     curl -i http://localhost:8080/site-exemplo/index.php
     # browser: http://localhost:8080/site-exemplo/index.php
+
+    curl -i http://localhost:8081
+    # browser: http://localhost:8081
 
     exit
   ./devops/compose/down.sh

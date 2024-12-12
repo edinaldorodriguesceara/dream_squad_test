@@ -7,10 +7,13 @@ services:
         ARG_USER_GID: ${ARG_USER_GID}
         ARG_PHP_VERSION: 8.3
       context: .
+    depends_on:
+      - mysql
     working_dir: /home/user/dream_squad_test
     ports:
       - 80:80
       - 8080:8080
+      - 8081:8081
     tty: true
     volumes:
       - app_local:/usr/local
@@ -20,5 +23,19 @@ services:
       - .:/home/user/dream_squad_test
       - ./devops/nginx/sites-enabled:/etc/nginx/sites-enabled
       - ./site-exemplo:/var/www/html/site-exemplo
+      - ./wordpress:/var/www/wordpress
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - 3306:3306
 volumes:
   app_local:
+  mysql_data:
