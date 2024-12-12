@@ -17,8 +17,15 @@ cd dream_squad_test
 
     ./devops/nginx/start.sh
     ./devops/nginx/status.sh
+
     curl -i http://localhost:8080
     # browser: http://localhost:8080
+
+    curl -i http://localhost:80
+    # browser: http://localhost:80
+
+    curl -i http://localhost:8080/site-exemplo/index.php
+    # browser: http://localhost:8080/site-exemplo/index.php
 
     exit
   ./devops/compose/down.sh

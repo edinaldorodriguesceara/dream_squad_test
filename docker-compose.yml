@@ -9,6 +9,7 @@ services:
       context: .
     working_dir: /home/user/dream_squad_test
     ports:
+      - 80:80
       - 8080:8080
     tty: true
     volumes:
