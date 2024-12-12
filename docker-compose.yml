@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      args:
+        ARG_LINUX_LOCALE: en_US.UTF-8
+        ARG_USER_UID: ${ARG_USER_UID}
+        ARG_USER_GID: ${ARG_USER_GID}
+        ARG_PHP_VERSION: 8.3
+      context: .
+    working_dir: /home/user/dream_squad_test
+    tty: true
+    volumes:
+      - app_local:/usr/local
+      - ~/.ssh:/home/user/.ssh
+      - ~/.gitconfig:/home/user/.gitconfig
+      - ~/.bash_history:/home/user/.bash_history
+      - .:/home/user/dream_squad_test
+volumes:
+  app_local:
