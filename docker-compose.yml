@@ -9,6 +9,7 @@ services:
       context: .
     working_dir: /home/user/dream_squad_test
     ports:
+      - 80:80
       - 8080:8080
     tty: true
     volumes:
@@ -18,5 +19,6 @@ services:
       - ~/.bash_history:/home/user/.bash_history
       - .:/home/user/dream_squad_test
       - ./devops/nginx/sites-enabled:/etc/nginx/sites-enabled
+      - ./site-exemplo:/var/www/html/site-exemplo
 volumes:
   app_local:

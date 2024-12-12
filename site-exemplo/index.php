@@ -1,1 +1,5 @@
-Ola XXXX!
+<?php
+
+echo "Ola XXXX!";
+
+?>
