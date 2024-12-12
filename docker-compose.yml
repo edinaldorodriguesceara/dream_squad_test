@@ -36,6 +36,11 @@ services:
       - mysql_data:/var/lib/mysql
     ports:
       - 3306:3306
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1000M
 volumes:
   app_local:
   mysql_data:
