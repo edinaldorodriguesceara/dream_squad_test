@@ -8,6 +8,9 @@ services:
         ARG_PHP_VERSION: 8.3
       context: .
     working_dir: /home/user/dream_squad_test
+    ports:
+      - 80:80
+      - 8080:8080
     tty: true
     volumes:
       - app_local:/usr/local
@@ -15,5 +18,7 @@ services:
       - ~/.gitconfig:/home/user/.gitconfig
       - ~/.bash_history:/home/user/.bash_history
       - .:/home/user/dream_squad_test
+      - ./devops/nginx/data/sites-available:/etc/nginx/sites-available
+      - ./devops/nginx/data/sites-enabled:/etc/nginx/sites-enabled
 volumes:
   app_local:
