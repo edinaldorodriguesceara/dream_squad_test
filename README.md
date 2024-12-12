@@ -10,7 +10,7 @@ cd dream_squad_test
   ./devops/compose/build.sh
   ./devops/compose/up.sh
   ./devops/compose/exec.sh
-    ./devops/linux/network.sh
+    ./devops/linux/network.bash
     ./devops/linux/usage.sh
 
     php --version
