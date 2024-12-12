@@ -38,3 +38,7 @@ WORKDIR /home/user
 RUN sudo apt install -y \
   nginx && \
   sudo chown user:user -R /etc/nginx
+
+RUN sudo mkdir /conf.d && \
+  sudo docker-php-ext-install mysqli pdo pdo_mysql && \
+  docker-php-ext-enable mysqli
