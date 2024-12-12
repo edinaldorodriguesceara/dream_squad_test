@@ -34,3 +34,7 @@ RUN getent passwd $ARG_USER_UID | cut -d: -f1 | { read username; [ -z "$username
 
 USER user
 WORKDIR /home/user
+
+RUN sudo apt install -y \
+  nginx && \
+  sudo chown user:user -R /etc/nginx
