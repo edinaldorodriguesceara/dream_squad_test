@@ -1,5 +1,5 @@
 ARG ARG_PHP_VERSION
-FROM --platform=linux/amd64 php:${ARG_PHP_VERSION}-fpm-bookworm 
+FROM --platform=linux/amd64 php:${ARG_PHP_VERSION}-fpm-bookworm
 
 SHELL ["/bin/sh", "-c"]
 
