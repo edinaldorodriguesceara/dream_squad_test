@@ -9,12 +9,12 @@ cd dream_squad_test
   ./devops/compose/config.sh
   ./devops/compose/build.sh
   ./devops/compose/up.sh
-  ./devops/compose/exec.sh mysql bash
-    mysql --version
+  ./devops/linux/usage.sh
+  ./devops/compose/exec.sh mariadb bash
+    mariadb --version
     exit
   ./devops/compose/exec.sh app bash
     ./devops/linux/network.bash
-    ./devops/linux/usage.sh
 
     php --version
 
