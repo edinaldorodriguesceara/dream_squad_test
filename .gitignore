@@ -1,1 +1,4 @@
 wordpress/wp-content/languages
+
+devops/nginx/log/*
+!devops/nginx/log/.keep

@@ -22,8 +22,14 @@ services:
       - ~/.bash_history:/home/user/.bash_history
       - .:/home/user/dream_squad_test
       - ./devops/nginx/sites-enabled:/etc/nginx/sites-enabled
+      - ./devops/nginx/log:/var/log/nginx
       - ./site-exemplo:/var/www/html/site-exemplo
       - ./wordpress:/var/www/wordpress
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 75M
   mariadb:
     image: mariadb:11.6.2-ubi
     command: --default-authentication-plugin=mariadb_native_password
@@ -33,14 +39,14 @@ services:
       MARIADB_USER: user
       MARIADB_PASSWORD: password
     volumes:
-      - mariadb_data:/var/lib/mariadb
+      - mariadb_data:/var/lib/mysql
     ports:
       - 3306:3306
     deploy:
       resources:
         limits:
           cpus: '1'
-          memory: 100M
+          memory: 125M
 volumes:
   app_local:
   mariadb_data:
