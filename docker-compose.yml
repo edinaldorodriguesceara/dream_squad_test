@@ -25,6 +25,7 @@ services:
       - ./devops/nginx/log:/var/log/nginx
       - ./site-exemplo:/var/www/html/site-exemplo
       - ./wordpress:/var/www/wordpress
+    restart: on-failure:3
     deploy:
       resources:
         limits:
@@ -42,6 +43,7 @@ services:
       - mariadb_data:/var/lib/mysql
     ports:
       - 3306:3306
+    restart: on-failure:3
     deploy:
       resources:
         limits:
