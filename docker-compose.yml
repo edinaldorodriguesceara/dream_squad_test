@@ -30,7 +30,7 @@ services:
       resources:
         limits:
           cpus: '0.5'
-          memory: 50M
+          memory: 40M
   mariadb:
     image: mariadb:11.6.2-ubi
     command: --default-authentication-plugin=mariadb_native_password
