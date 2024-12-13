@@ -6,3 +6,4 @@ devops/nginx/log/*
 *.orig
 
 devops/ec2/*.pem
+devops/ec2/.env
