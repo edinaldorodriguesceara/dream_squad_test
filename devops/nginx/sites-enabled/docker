@@ -19,8 +19,8 @@
 # Default server configuration
 #
 server {
-	listen 8080 default_server;
-	listen [::]:8080 default_server;
+	listen 8080;
+	listen [::]:8080;
 
 	# SSL configuration
 	#
@@ -43,7 +43,7 @@ server {
 	# Add index.php to the list if you are using PHP
 	index index.nginx-debian.html;
 
-	server_name _;
+	server_name docker-edinaldo-rodrigues.localhost docker-edinaldo-rodrigues.dreamsquad.com.br;
 
 	location / {
 		# First attempt to serve request as file, then
