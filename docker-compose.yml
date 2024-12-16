@@ -29,8 +29,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1'
-          memory: 75M
+          cpus: '0.5'
+          memory: 40M
   mariadb:
     image: mariadb:11.6.2-ubi
     command: --default-authentication-plugin=mariadb_native_password
@@ -47,8 +47,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1'
-          memory: 125M
+          cpus: '0.5'
+          memory: 100M
 volumes:
   app_local:
   mariadb_data:
